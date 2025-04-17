@@ -1,4 +1,4 @@
-Inserts 10 sample records into the Employee table of hr_system database
+-- Inserts 10 sample records into the Employee table of hr_system database
 INSERT INTO Employee (id, name, email, salary) VALUES
 (7, 'Usman Khan', 'usman.khan@example.com', 60000),
 (8, 'Sara Amjad', 'sara.amjad@example.com', 44000),
@@ -10,7 +10,7 @@ INSERT INTO Employee (id, name, email, salary) VALUES
 (14, 'Zainab Shah', 'zainab.shah@example.com', 69000),
 (15, 'Hamza Iqbal', 'hamza.iqbal@example.com', 53000),
 (16, 'Hira Yousuf', 'hira.yousuf@example.com', 56000);
-Add new column designation in already exist table employee
+-- Add new column designation in already exist table employee
 ALTER TABLE Employee
 ADD COLUMN designation VARCHAR(100);
 update the new column (designation) in existing records
