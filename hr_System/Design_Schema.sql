@@ -93,3 +93,8 @@ ALTER COLUMN salary SET NOT NULL;
 ALTER TABLE employee
 ADD CONSTRAINT chk_salary_positive
 CHECK (salary > 0);
+
+--Drop the CHECK constraint
+ALTER TABLE employee
+DROP CONSTRAINT chk_salary_positive;
+
