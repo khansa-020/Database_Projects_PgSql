@@ -71,3 +71,25 @@ CREATE TABLE leave ();  -- Empty table
 -- Renames the table from leave to leaves
 ALTER TABLE leave RENAME TO leaves;
 
+--use ALTER TABLE to add columns or constraints
+ALTER TABLE leaves ADD COLUMN leave_id SERIAL PRIMARY KEY; --auto-incrementing ID
+ALTER TABLE leaves ADD COLUMN employee_id INT; --used as a foreign key later
+ALTER TABLE leaves ADD COLUMN leave_type VARCHAR(50);
+ALTER TABLE leaves ADD COLUMN leave_start DATE NOT NULL;
+ALTER TABLE leaves ADD COLUMN leave_end DATE NOT NULL;
+ALTER TABLE leaves ADD COLUMN leave_status VARCHAR(20) DEFAULT 'Pending';
+
+
+-----"CONSTRAINTS"-----
+
+-- Change Data type
+ALTER COLUMN salary TYPE NUMERIC(10, 2);
+
+-- Set NOT NULL constraint
+ALTER TABLE employee
+ALTER COLUMN salary SET NOT NULL;
+
+-- Add CHECK constraint to ensure salary is positive
+ALTER TABLE employee
+ADD CONSTRAINT chk_salary_positive
+CHECK (salary > 0);
